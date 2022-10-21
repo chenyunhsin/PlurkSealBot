@@ -9,16 +9,10 @@ import requests
 import re
 import json
 import urllib.request
-from quickdraw import QuickDrawData
 
 import pyimgur
 import time
 from plurk_oauth import PlurkAPI
-from twoLight import twoLight
-from gue import gue
-from gua import check_gua
-from eddecode import encode, decode
-from palindromic5 import longestPalindrome
 from sealDB import *
 
 google_key = ""
