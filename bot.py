@@ -13,7 +13,6 @@ import urllib.request
 import pyimgur
 import time
 from plurk_oauth import PlurkAPI
-from sealDB import *
 
 google_key = ""
 client_id = ''
