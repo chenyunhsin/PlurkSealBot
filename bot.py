@@ -10,11 +10,11 @@ import re
 import json
 import urllib.request
 
-import pyimgur
+
 import time
 from plurk_oauth import PlurkAPI
 
-google_key = ""
+
 client_id = ''
 client_secret = ''
 
