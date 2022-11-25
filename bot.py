@@ -22,9 +22,7 @@ plurk = PlurkAPI('xxx', 'xxx')
 plurk.authorize('xxx', 'xxx')
 
 
-
 random_list = [ "今天過得開心嗎(p-rock)", "讚讚 [emo10]", "棒棒地[emo9]"]
-
 comet = plurk.callAPI('/APP/Realtime/getUserChannel')
 comet_channel = comet.get('comet_server') + "&new_offset=%d"
 jsonp_re = re.compile('CometChannel.scriptCallback\((.+)\);\s*');
@@ -86,13 +84,6 @@ def responseMentioned():
                         dealContent(pid, target, True, pu, pu['from_user']['id'])
 
 
-
-
-
-
-
-
-
 def dealContent(pid, content, isCmd, pu, user_id):
     print(f"reply plurk id:{pid} content:{content} pu: {pu}")
     if content.find("進村") != -1 or content.find("開村") != -1:
@@ -110,6 +101,7 @@ def dealContent(pid, content, isCmd, pu, user_id):
             random.shuffle(random_list)
             plurkResponse(pid, random_list[0])
 
+            
 while True:
     match = initApi()
     if match:
