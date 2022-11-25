@@ -18,8 +18,8 @@ from plurk_oauth import PlurkAPI
 client_id = 'xxx'
 client_secret = 'xxx'
 headers = {'x-api-key': 'xxx'}
-plurk = PlurkAPI('Yz9b7mslTXYT', 'xxx')
-plurk.authorize('ihC3Nonq9Nw9', 'xxx')
+plurk = PlurkAPI('xxx', 'xxx')
+plurk.authorize('xxx', 'xxx')
 
 
 
