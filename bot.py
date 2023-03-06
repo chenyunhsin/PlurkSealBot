@@ -14,13 +14,12 @@ import urllib.request
 import time
 from plurk_oauth import PlurkAPI
 
-# 以下xxx請替換成自己的值！
+# 以下請替換成自己的值！
 client_id = 'xxx'
 client_secret = 'xxx'
-headers = {'x-api-key': 'xxx'}
-plurk = PlurkAPI('xxx', 'xxx')
-plurk.authorize('xxx', 'xxx')
-
+headers = {'x-api-key': '{$$.env.x-api-key}'}
+plurk = PlurkAPI('APP_KEY', 'APP_SECRET')
+plurk.authorize('ACCEESS_TOKEN', 'ACCESS_TOKEN_SECRET')
 
 random_list = [ "今天過得開心嗎(p-rock)", "讚讚 [emo10]", "棒棒地[emo9]"]
 comet = plurk.callAPI('/APP/Realtime/getUserChannel')
