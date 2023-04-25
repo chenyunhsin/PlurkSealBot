@@ -9,8 +9,7 @@ import time
 from plurk_oauth import PlurkAPI
 
 # 以下請替換成自己的值！
-client_id = 'xxx'
-client_secret = 'xxx'
+friend_list = []
 headers = {'x-api-key': '{$$.env.x-api-key}'}
 plurk = PlurkAPI('APP_KEY', 'APP_SECRET')
 plurk.authorize('ACCEESS_TOKEN', 'ACCESS_TOKEN_SECRET')
@@ -19,7 +18,7 @@ random_list = [ "今天過得開心嗎(p-rock)", "讚讚 [emo10]", "棒棒地[em
 comet = plurk.callAPI('/APP/Realtime/getUserChannel')
 comet_channel = comet.get('comet_server') + "&new_offset=%d"
 jsonp_re = re.compile('CometChannel.scriptCallback\((.+)\);\s*');
-
+new_offset = -1
 
 def auth():
     plurk.authorize('ACCEESS_TOKEN', 'ACCESS_TOKEN_SECRET')
@@ -42,7 +41,10 @@ def setFriendList():
     except Exception as e:
         print(f"setFriendList err: {e}")
 
-
+#回噗    
+def plurkResponse(pid,content):
+    plurk.callAPI('/APP/Responses/responseAdd', {'plurk_id': pid,
+                                                 'content': content, 'qualifier': ':'})
 def initApi():
     auth()
     plurk.callAPI('/APP/Alerts/addAllAsFriends')
