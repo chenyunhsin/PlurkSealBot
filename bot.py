@@ -22,7 +22,7 @@ jsonp_re = re.compile('CometChannel.scriptCallback\((.+)\);\s*');
 
 
 def auth():
-    plurk.authorize('', '')
+    plurk.authorize('ACCEESS_TOKEN', 'ACCESS_TOKEN_SECRET')
     time.sleep(0.1)
     comet = plurk.callAPI('/APP/Realtime/getUserChannel')
     try:
