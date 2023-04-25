@@ -1,10 +1,4 @@
-#!/usr/bin/python
-# -*- coding:utf-8 -*-
-from datetime import datetime
-from datetime import timedelta
-
 import random
-import numpy as np
 import requests
 import re
 import json
